@@ -53,8 +53,18 @@ public class TarjetaCredito {
      * @param  dinero - cantidad que se quiere pagar con tarjeta de crédito
      * @param  cuenta - cuenta de la que se quiere comprobar y retirar el dinero para pagar
      */
-	public void pagarConTarjeta(int dinero, CuentaBancaria cuenta) {
-		cuenta.getSaldo();
+	public boolean pagarConTarjeta(int dinero, CuentaBancaria cuenta) {
+		boolean pago_hecho = true;
+		int saldo = cuenta.getSaldo();
+		int prueba = saldo - dinero;
+		if (prueba<=0) {
+			pago_hecho = false;
+			return pago_hecho;
+		}
+		else {
+			cuenta.setSaldo(prueba);
+			return pago_hecho;
+		}
 		
 	}
 }
