@@ -11,10 +11,6 @@ public class Cliente {
 	private int nif;
 	private int edad;
 	private int saldo_medio;
-
-	public Cliente() {
-	
-	}
 	
 	
 	public Cliente(String nombre, String direccion, String apellido, int nif, int edad) {

@@ -11,10 +11,6 @@ public class CuentaBancaria {
 	private int nro_cuenta;
 	private String fecha_apertura;
 	
-	public CuentaBancaria() {
-		super();
-	}
-	
 	public CuentaBancaria(int nif_cliente, int saldo, int limite_max, int nro_cuenta, String fecha_apertura) {
 		super();
 		this.nif_cliente = nif_cliente;

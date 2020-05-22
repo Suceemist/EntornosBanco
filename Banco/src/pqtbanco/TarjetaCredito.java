@@ -1,6 +1,5 @@
 package pqtbanco;
 /**
-*
 * @author Ana
 */
 
@@ -10,10 +9,6 @@ public class TarjetaCredito {
 	private int limite_internet;
 	private int limite_cajero;
 	 
-	public TarjetaCredito() {
-	}
-	
-	
 	public TarjetaCredito(int nro_tarjeta, int nro_cuenta, int limite_internet, int limite_cajero) {
 		super();
 		this.nro_tarjeta = nro_tarjeta;
@@ -55,7 +50,8 @@ public class TarjetaCredito {
 	}
 
 	/**
-     * @return int dinero - cantidad que se quiere pagar con tarjeta de crédito
+     * @param  dinero - cantidad que se quiere pagar con tarjeta de crédito
+     * @param  cuenta - cuenta de la que se quiere comprobar y retirar el dinero para pagar
      */
 	public void pagarConTarjeta(int dinero, CuentaBancaria cuenta) {
 		cuenta.getSaldo();
