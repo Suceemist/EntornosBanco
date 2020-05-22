@@ -47,12 +47,16 @@ public class Cliente {
 	public void setSaldo_medio() {
 		this.saldo_medio = saldo_medio;
 	}
-
+	
+	/**
+     * 
+     * @return int saldo medio de este perfil de usuario durante los últimos 12 meses
+     * 
+     */
 	public int calcularSaldoMedio() {
 		int saldo_total=0;
-		saldo_total = (int) (10000*Math.random());
+		saldo_total = (int) (100000*Math.random());
 		saldo_total = Math.round(saldo_total);
-		saldo_total = saldo_total*12;
 		saldo_medio=saldo_total/12;
 		return saldo_medio;
 	}

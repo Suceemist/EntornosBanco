@@ -16,20 +16,34 @@ public class CuentaBancaria {
 		this.nro_cuenta = nro_cuenta;
 		this.fecha_apertura = fecha_apertura;
 	}
+	
+	/**
+     * 
+     * @param cantidad Cantidad de dinero a ingresar en la cuenta bancaria 
+     * 
+     */
 
 	public void ingresarDinero(int cantidad){
-		
+		saldo +=cantidad;
 	}
 	
-	public boolean retirarDinero(int cantidad) {
-		boolean validarRetirada = validarRetirada(cantidad);
-		if(validarRetirada) {
+	/**
+     * 
+     * @param cantidad Cantidad de dinero a retirar de la cuenta bancaria 
+     * 
+     */
+	public void retirarDinero(int cantidad) {
+		boolean validar_retirada = validarRetirada(cantidad);
+		if(validar_retirada==true) {
 			saldo = saldo - cantidad;
 		}
-		
-		return true;
 	}
 	
+	/**
+     * 
+     * @param dinero Cantidad de dinero para validar su retirada en la cuenta bancaria 
+     * @return boolean validacion de la retirada cuando la cuenta no se queda a 0
+     */
 	public boolean validarRetirada(int dinero) {
 		boolean validarRetirada = true;
 		int saldo_final = saldo - dinero;
@@ -38,6 +52,4 @@ public class CuentaBancaria {
 		}
 		return validarRetirada;
 	}
-
-
 }
