@@ -55,16 +55,21 @@ public class TarjetaCredito {
      */
 	public boolean pagarConTarjeta(int dinero, CuentaBancaria cuenta) {
 		boolean pago_hecho = true;
+		pago_hecho = cuenta.validarRetirada(dinero);
 		int saldo = cuenta.getSaldo();
-		int prueba = saldo - dinero;
-		if (prueba<=0) {
-			pago_hecho = false;
-			return pago_hecho;
+		
+		if (pago_hecho==true) {
+			if (dinero >= limite_internet || dinero >= limite_cajero) {
+				pago_hecho = false;
+			}
+			else {
+				int saldo_nuevo = saldo - dinero;
+				cuenta.setSaldo(saldo_nuevo);
+			}
 		}
 		else {
-			cuenta.setSaldo(prueba);
-			return pago_hecho;
+			pago_hecho = false;
 		}
-		
+		return pago_hecho;
 	}
 }

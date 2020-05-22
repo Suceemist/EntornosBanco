@@ -66,7 +66,6 @@ public class CuentaBancaria {
 
 	public int ingresarDinero(int cantidad){
 		saldo +=cantidad;
-		
 		return saldo;
 	}
 	
@@ -78,7 +77,6 @@ public class CuentaBancaria {
 		if(validar_retirada==true) {
 			saldo = saldo - cantidad;
 		}
-		
 		return saldo;
 	}
 	
