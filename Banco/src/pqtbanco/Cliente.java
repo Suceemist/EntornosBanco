@@ -61,9 +61,7 @@ public class Cliente {
 	}
 	
 	/**
-     * 
      * @return int saldo medio de este perfil de usuario durante los últimos 12 meses
-     * 
      */
 	public boolean calcularSaldoMedio() {
 		boolean saldo_calculado = true;

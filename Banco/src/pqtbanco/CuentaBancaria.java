@@ -62,8 +62,8 @@ public class CuentaBancaria {
 
 	/**
      * @param cantidad Cantidad de dinero a ingresar en la cuenta bancaria 
+     * @return int saldo que se queda en la cuenta bancaria 
      */
-
 	public int ingresarDinero(int cantidad){
 		saldo +=cantidad;
 		return saldo;
@@ -71,6 +71,7 @@ public class CuentaBancaria {
 	
 	/**
      * @param cantidad Cantidad de dinero a retirar de la cuenta bancaria 
+     * @return int saldo que se queda en la cuenta bancaria 
      */
 	public int retirarDinero(int cantidad) {
 		boolean validar_retirada = validarRetirada(cantidad);

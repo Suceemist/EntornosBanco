@@ -16,7 +16,7 @@ public class TarjetaCredito {
 		this.limite_internet = limite_internet;
 		this.limite_cajero = limite_cajero;
 	}
-
+	
 	public int getNro_tarjeta() {
 		return nro_tarjeta;
 	}
@@ -53,6 +53,7 @@ public class TarjetaCredito {
      * @param  dinero - cantidad que se quiere pagar con tarjeta de crédito
      * @param  cuenta - cuenta de la que se quiere comprobar y retirar el dinero para pagar
      * @param  opcion - opcion que será 1 para cajero y 2 para internet, si no se elige una no se hace el pago
+     * @return boolean - indica si el pago se ha realizado o no
      */
 	public boolean pagarConTarjeta(int dinero, CuentaBancaria cuenta, int opcion) {
 		boolean pago_hecho =  cuenta.validarRetirada(dinero);
