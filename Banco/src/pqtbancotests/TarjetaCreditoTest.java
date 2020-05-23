@@ -19,15 +19,17 @@ class TarjetaCreditoTest {
 		TarjetaCredito tarjeta1 = new TarjetaCredito(001, 001, 500, 1000);
 		TarjetaCredito tarjeta2 = new TarjetaCredito(002, 002, 1500, 1500);
 		
-		assertTrue(tarjeta1.pagarConTarjeta(500, cuenta1));
-		assertFalse(tarjeta1.pagarConTarjeta(500, cuenta1));
-		assertFalse(tarjeta1.pagarConTarjeta(500, cuenta1));
-		assertFalse(tarjeta1.pagarConTarjeta(500, cuenta1));
+		assertTrue(tarjeta1.pagarConTarjeta(500, cuenta1, 1));
+		assertFalse(tarjeta1.pagarConTarjeta(500, cuenta1, 1));
+		assertFalse(tarjeta1.pagarConTarjeta(500, cuenta1, 1));
+		assertFalse(tarjeta1.pagarConTarjeta(500, cuenta1, 1));
 		
+		/*
 		assertTrue(tarjeta2.pagarConTarjeta(500, cuenta2));
 		assertFalse(tarjeta2.pagarConTarjeta(500, cuenta2));
 		assertFalse(tarjeta2.pagarConTarjeta(500, cuenta2));
 		assertFalse(tarjeta2.pagarConTarjeta(500, cuenta2));
+		*/
 		
 	}
 

@@ -52,14 +52,25 @@ public class TarjetaCredito {
 	/**
      * @param  dinero - cantidad que se quiere pagar con tarjeta de crédito
      * @param  cuenta - cuenta de la que se quiere comprobar y retirar el dinero para pagar
+     * @param  opcion - opcion que será 1 para cajero y 2 para internet, si no se elige una no se hace el pago
      */
-	public boolean pagarConTarjeta(int dinero, CuentaBancaria cuenta) {
-		boolean pago_hecho = true;
+	public boolean pagarConTarjeta(int dinero, CuentaBancaria cuenta, int opcion) {
+		boolean pago_hecho = false;
 		pago_hecho = cuenta.validarRetirada(dinero);
 		int saldo = cuenta.getSaldo();
+		int limite_opcion = 0;
+		
+		if (opcion == 1) {
+			limite_opcion = limite_cajero;
+			pago_hecho = true;
+		}
+		else if(opcion == 2) {
+			limite_opcion = limite_internet;
+			pago_hecho = true;
+		}
 		
 		if (pago_hecho==true) {
-			if (dinero >= limite_internet || dinero >= limite_cajero) {
+			if (dinero >= limite_opcion) {
 				pago_hecho = false;
 			}
 			else {
