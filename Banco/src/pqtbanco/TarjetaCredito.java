@@ -55,8 +55,7 @@ public class TarjetaCredito {
      * @param  opcion - opcion que será 1 para cajero y 2 para internet, si no se elige una no se hace el pago
      */
 	public boolean pagarConTarjeta(int dinero, CuentaBancaria cuenta, int opcion) {
-		boolean pago_hecho = false;
-		pago_hecho = cuenta.validarRetirada(dinero);
+		boolean pago_hecho =  cuenta.validarRetirada(dinero);
 		int saldo = cuenta.getSaldo();
 		int limite_opcion = 0;
 		
@@ -68,6 +67,9 @@ public class TarjetaCredito {
 			limite_opcion = limite_internet;
 			pago_hecho = true;
 		}
+		else {
+			pago_hecho = false;
+		}
 		
 		if (pago_hecho==true) {
 			if (dinero >= limite_opcion) {
@@ -78,9 +80,7 @@ public class TarjetaCredito {
 				cuenta.setSaldo(saldo_nuevo);
 			}
 		}
-		else {
-			pago_hecho = false;
-		}
+
 		return pago_hecho;
 	}
 }
